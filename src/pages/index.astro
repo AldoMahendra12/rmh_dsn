@@ -1,0 +1,1567 @@
+---
+import { ClientRouter } from "astro:transitions";
+import '@fontsource-variable/montserrat';
+import '../styles/global.css';
+---
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Desain Web Mulai Disini</title>
+    <ClientRouter />
+  </head>
+  <body class="min-h-screen m-0 antialiased tracking-tight relative bg-black overflow-x-hidden">
+    <!-- Hero Section -->
+    <section class="sticky top-0 h-screen w-full overflow-hidden z-0">
+      <!-- Backgrounds Animasi -->
+    <div class="hero-bg-1 absolute inset-0 w-full h-full bg-amber-950/30 bg-blend-overlay bg-[url('/hero1.png')] bg-cover bg-center bg-no-repeat -z-20 origin-center scale-[1.15]"></div>
+    <div class="hero-bg-2 absolute inset-0 w-full h-full bg-amber-950/30 bg-blend-overlay bg-[url('/hero2.png')] bg-cover bg-center bg-no-repeat -z-10" style="clip-path: inset(100% 0 0 0);"></div>
+
+    <!-- Navbar -->
+    <nav class="absolute top-0 left-0 w-full flex items-center justify-between px-8 pt-2 pb-4 z-50">
+      <div class="overflow-hidden">
+        <a href="/" class="logo group flex items-center cursor-pointer h-12 md:h-16 hero-reveal translate-y-[110%]">
+          <!-- Logo Icon -->
+          <img src="/logo-putih.png" alt="Logo Arsitektur" class="h-12 md:h-16 w-auto relative z-20 drop-shadow-md transition-transform duration-500 ease-out group-hover:scale-105" />
+          
+          <!-- Efek Logo Kata (Expand & Slide) -->
+          <div class="flex items-center overflow-hidden max-w-0 opacity-0 invisible transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:max-w-[800px] group-hover:opacity-100 group-hover:visible group-hover:-ml-2">
+            <img src="/logo-kata.png" alt="Rumah Disain Text" class="h-16 md:h-[8.5rem] w-auto shrink-0 -translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-x-2" />
+          </div>
+        </a>
+      </div>
+
+      <!-- Menu Navigasi -->
+      <ul class="hidden md:flex items-center gap-3 text-sm font-bold tracking-tight text-white">
+        <li>
+          <div class="overflow-hidden">
+            <a href="/karya" target="_blank" class="group/nav relative block h-5 overflow-hidden text-white hero-reveal translate-y-[110%]">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/nav:-translate-y-5">
+                <span class="h-5 leading-5 flex items-center">KARYA</span>
+                <span class="h-5 leading-5 flex items-center">KARYA</span>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="text-zinc-400 overflow-hidden"><span class="hero-reveal inline-block translate-y-[110%]">&bull;</span></li>
+        <li>
+          <div class="overflow-hidden">
+            <a href="/studio" class="group/nav relative block h-5 overflow-hidden text-white hero-reveal translate-y-[110%]">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/nav:-translate-y-5">
+                <span class="h-5 leading-5 flex items-center">STUDIO</span>
+                <span class="h-5 leading-5 flex items-center">STUDIO</span>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="text-zinc-400 overflow-hidden"><span class="hero-reveal inline-block translate-y-[110%]">&bull;</span></li>
+        <li>
+          <div class="overflow-hidden">
+            <a href="/proses" class="group/nav relative block h-5 overflow-hidden text-white hero-reveal translate-y-[110%]">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/nav:-translate-y-5">
+                <span class="h-5 leading-5 flex items-center">PROSES</span>
+                <span class="h-5 leading-5 flex items-center">PROSES</span>
+              </div>
+            </a>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- Tombol Hubungi Kami -->
+      <div class="overflow-hidden">
+        <a href="#" class="ngobrol-trigger group flex items-center gap-4 bg-black text-white px-7 py-3 rounded-full hero-reveal translate-y-[110%] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] hover:scale-105">
+          <div class="relative h-5 overflow-hidden">
+            <div class="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] transform-gpu group-hover:-translate-y-5">
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">NGOBROL YUK</span>
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">NGOBROL YUK</span>
+            </div>
+          </div>
+          <!-- Lingkaran (Agak besar outline di rest state, mengecil dan fill di hover state) -->
+          <span class="relative flex items-center justify-center w-3 h-3">
+            <span class="absolute w-3 h-3 rounded-full border-[1.5px] border-white transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] transform-gpu group-hover:scale-50 group-hover:bg-white group-hover:border-transparent"></span>
+          </span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="flex items-center justify-center min-h-screen w-full px-8">
+      <div class="hero-container w-full">
+        <!-- Informasi Proyek (seperti imag1) -->
+        <div class="flex flex-col md:flex-row items-center justify-between w-full text-white text-xs md:text-sm font-bold tracking-tight uppercase gap-8 md:gap-0">
+          <div class="md:w-1/4 flex justify-center md:justify-start overflow-hidden">
+            <span class="hero-reveal translate-y-[110%] inline-block">PROYEK PILIHAN</span>
+          </div>
+          <div class="md:w-1/4 flex justify-center overflow-hidden">
+            <div class="hero-reveal translate-y-[110%]">
+              <div class="relative h-5 overflow-hidden">
+                <div class="project-name-slider flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)]">
+                  <span class="h-5 leading-5 flex items-center">RUMAH JALAN SUDIRMAN</span>
+                  <span class="h-5 leading-5 flex items-center">RUMAH KETANON</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/4 flex justify-center text-center overflow-hidden">
+            <span class="hero-reveal translate-y-[110%] inline-block">2024</span>
+          </div>
+          <div class="md:w-1/4 flex justify-center md:justify-end overflow-hidden">
+            <a href="#" class="group flex items-center gap-3 project-link hero-reveal translate-y-[110%]">
+              <div class="relative flex flex-col pb-0.5">
+                <div class="relative h-5 overflow-hidden text-white">
+                  <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-5">
+                    <span class="text-xs md:text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">LIHAT PROYEK</span>
+                    <span class="text-xs md:text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">LIHAT PROYEK</span>
+                  </div>
+                </div>
+                <!-- Animasi Garis Bawah: Menghilang dari kiri ke kanan semakin cepat dan looping 2 kali -->
+                <span class="absolute bottom-0 left-0 w-full h-[1.5px] bg-white line-loop-element"></span>
+              </div>
+              <!-- Lingkaran animasi sama seperti tombol utama -->
+              <span class="relative flex items-center justify-center w-2.5 h-2.5">
+                <span class="absolute w-2.5 h-2.5 rounded-full border-[1.5px] border-white transition-all duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-50 group-hover:bg-white group-hover:border-transparent"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teks Bawah Hero (Scroll Down) -->
+    <div class="absolute bottom-4 md:bottom-6 left-8 right-8 flex items-end justify-between z-10 bottom-text-container">
+      <div class="max-w-[45rem] text-white overflow-hidden">
+        <p class="text-lg md:text-3xl font-medium leading-tight drop-shadow-md text-left text-balance hero-reveal translate-y-[110%]" style="word-spacing: 0em; letter-spacing: -0.08em;">
+          Gaya Rumah Disain memadukan bentuk kuat dan solid dengan keanggunan halus, keseimbangan alami, serta daya tarik abadi.
+        </p>
+      </div>
+      <div class="overflow-hidden shrink-0 ml-8">
+        <div class="text-white text-xs font-bold tracking-tight uppercase mb-1 md:mb-2 hero-reveal translate-y-[110%]">
+          (GULIR KE BAWAH)
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="relative z-10 w-full bg-white text-black min-h-screen flex flex-col justify-start pb-20">
+      
+
+      <!-- New About Content -->
+      <div class="w-full flex flex-col md:flex-row justify-between gap-12 md:gap-0 px-4 md:px-8 pt-8 md:pt-12">
+        <!-- Left Column -->
+        <div class="w-full md:w-[25%] lg:w-[22%] flex flex-col">
+          
+          <!-- Top Bar with Progress (Now at Top) -->
+          <div class="flex flex-col mb-8">
+            <!-- Progress Line -->
+            <div class="w-full h-[1px] bg-black/20 mb-4 relative overflow-hidden">
+              <div id="au-progress-bar" class="absolute top-0 left-0 h-full bg-black w-0"></div>
+            </div>
+            <!-- Arrows and Counter -->
+            <div class="flex items-center justify-between">
+              <div class="flex gap-4">
+                <span class="cursor-pointer hover:opacity-70" id="au-prev">&larr;</span>
+                <span class="cursor-pointer hover:opacity-70" id="au-next">&rarr;</span>
+              </div>
+              <span class="text-xs text-black/50 font-mono tracking-widest" id="au-counter">01/03</span>
+            </div>
+          </div>
+
+          <!-- Image Slider -->
+          <div class="relative w-full aspect-video mb-12 overflow-hidden rounded-lg bg-black/5">
+            <img class="au-slide-img absolute inset-0 w-full h-full object-cover z-10" style="clip-path: inset(0 0 0 0);" src="/au-1.png" />
+            <img class="au-slide-img absolute inset-0 w-full h-full object-cover z-0" style="clip-path: inset(100% 0 0 0);" src="/au-2.png" />
+            <img class="au-slide-img absolute inset-0 w-full h-full object-cover z-0" style="clip-path: inset(100% 0 0 0);" src="/au-3.png" />
+          </div>
+          
+          <!-- Text Slider -->
+          <div class="relative w-full h-[150px]">
+            <!-- Slide 1 Text -->
+            <div class="au-slide-text absolute inset-0 flex flex-col z-10 pointer-events-auto">
+              <div class="overflow-hidden">
+                <h3 class="au-text-reveal text-5xl md:text-6xl font-semibold mb-4 tracking-tight translate-y-0">100+</h3>
+              </div>
+              <div class="overflow-hidden">
+                <p class="au-text-reveal text-sm md:text-base text-black/60 max-w-[250px] leading-snug translate-y-0">Proyek hunian dan komersial yang berhasil kami wujudkan di seluruh Indonesia.</p>
+              </div>
+            </div>
+            <!-- Slide 2 Text -->
+            <div class="au-slide-text absolute inset-0 flex flex-col z-0 pointer-events-none">
+              <div class="overflow-hidden">
+                <h3 class="au-text-reveal text-5xl md:text-6xl font-semibold mb-4 tracking-tight translate-y-[110%]">30+</h3>
+              </div>
+              <div class="overflow-hidden">
+                <p class="au-text-reveal text-sm md:text-base text-black/60 max-w-[250px] leading-snug translate-y-[110%]">Penghargaan berskala global dan apresiasi dari berbagai media arsitektur ternama.</p>
+              </div>
+            </div>
+            <!-- Slide 3 Text -->
+            <div class="au-slide-text absolute inset-0 flex flex-col z-0 pointer-events-none">
+              <div class="overflow-hidden">
+                <h3 class="au-text-reveal text-5xl md:text-6xl font-semibold mb-4 tracking-tight translate-y-[110%]">15+</h3>
+              </div>
+              <div class="overflow-hidden">
+                <p class="au-text-reveal text-sm md:text-base text-black/60 max-w-[250px] leading-snug translate-y-[110%]">Tahun pengalaman berdedikasi menciptakan arsitektur yang berpusat pada manusia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="w-full md:w-[60%] lg:w-[55%] flex flex-col justify-start text-highlight-container text-highlight">
+          <p class="text-[1.35rem] md:text-[1.75rem] lg:text-[2rem] leading-[1.15] font-semibold tracking-tighter mb-12 inline-block">
+            Rumah Disain lahir dari keyakinan bahwa setiap ruang harus mampu bercerita tentang siapa penghuninya. Berbekal pengalaman belasan tahun merancang arsitektur, kami tidak sekadar mendesain bangunan, melainkan merangkai pengalaman hidup yang bermakna di setiap sudut hunian.
+          </p>
+          <p class="text-[1.35rem] md:text-[1.75rem] lg:text-[2rem] leading-[1.15] font-semibold tracking-tighter inline-block">
+            Pendekatan kami selalu berpusat pada personalisasi yang mendalam, menerjemahkan impian Anda menjadi ruang yang fungsional, memukau, dan tak lekang oleh waktu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="relative z-10 w-full bg-white text-black flex flex-col justify-center h-screen overflow-hidden py-20">
+      
+      <!-- Top Title Label -->
+      <div class="absolute top-10 left-8 md:left-12 z-20">
+        <p class="text-[14px] font-bold tracking-wide uppercase text-black">(RUANG YANG KAMI WUJUDKAN)</p>
+      </div>
+
+      <!-- Center Wrapper for List -->
+      <div class="w-fit flex flex-col items-start justify-center gap-2.5 md:gap-3.5 z-20 relative mx-auto px-4">
+        
+        <div class="works-list-item cursor-pointer group" data-index="0">
+          <h2 class="text-[5.5vw] md:text-[3.8vw] font-bold leading-[0.9] tracking-[-0.08em] text-zinc-400 transition-colors duration-500 hover:text-black select-none">
+            Rumah Sudirman
+          </h2>
+        </div>
+
+        <div class="works-list-item cursor-pointer group" data-index="1">
+          <h2 class="text-[5.5vw] md:text-[3.8vw] font-bold leading-[0.9] tracking-[-0.08em] text-zinc-400 transition-colors duration-500 hover:text-black select-none">
+            Villa Tropis Bedugul
+          </h2>
+        </div>
+
+        <div class="works-list-item cursor-pointer group" data-index="2">
+          <h2 class="text-[5.5vw] md:text-[3.8vw] font-bold leading-[0.9] tracking-[-0.08em] text-zinc-400 transition-colors duration-500 hover:text-black select-none">
+            Klinik Estetika Jakarta
+          </h2>
+        </div>
+
+        <div class="works-list-item cursor-pointer group" data-index="3">
+          <h2 class="text-[5.5vw] md:text-[3.8vw] font-bold leading-[0.9] tracking-[-0.08em] text-zinc-400 transition-colors duration-500 hover:text-black select-none">
+            Kantor Ruang Kreatif
+          </h2>
+        </div>
+
+        <div class="works-list-item cursor-pointer group" data-index="4">
+          <h2 class="text-[5.5vw] md:text-[3.8vw] font-bold leading-[0.9] tracking-[-0.08em] text-zinc-400 transition-colors duration-500 hover:text-black select-none">
+            Rumah Kaca Sentul
+          </h2>
+        </div>
+
+        <div class="works-list-item cursor-pointer group" data-index="5">
+          <h2 class="text-[5.5vw] md:text-[3.8vw] font-bold leading-[0.9] tracking-[-0.08em] text-zinc-400 transition-colors duration-500 hover:text-black select-none">
+            Paviliun Kayu Dago
+          </h2>
+        </div>
+
+      </div>
+
+      <!-- CTA Button (Centered on Screen) -->
+      <div class="mt-14 md:mt-24 w-full flex justify-center z-20 relative">
+        <a href="/karya" target="_blank" class="group inline-flex items-center gap-4 bg-black text-white px-8 py-3.5 rounded-full hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">
+          <div class="relative h-5 overflow-hidden">
+            <div class="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-5">
+              <span class="text-xs md:text-sm font-bold h-5 leading-5 flex items-center tracking-widest uppercase">LIHAT SEMUA PROYEK</span>
+              <span class="text-xs md:text-sm font-bold h-5 leading-5 flex items-center tracking-widest uppercase">LIHAT SEMUA PROYEK</span>
+            </div>
+          </div>
+          <span class="relative flex items-center justify-center w-2.5 h-2.5">
+            <span class="absolute w-2.5 h-2.5 rounded-full border-[1.5px] border-white transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-50 group-hover:bg-white group-hover:border-transparent"></span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Absolute Images Container (Rendered off-screen or clipped out) -->
+      <div class="absolute inset-0 pointer-events-none z-10 w-full h-full overflow-hidden">
+        
+        <!-- Image 0 -->
+        <div class="works-image-container absolute left-[6%] md:left-[10vw] top-[20%] w-[28vw] md:w-[15vw] aspect-[3/4] overflow-hidden" style="opacity: 0; transform: translateY(20px);">
+          <img src="/hero1.png" alt="Rumah Sudirman" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Image 1 -->
+        <div class="works-image-container absolute right-[6%] md:right-[10vw] top-[25%] w-[28vw] md:w-[15vw] aspect-[3/4] overflow-hidden" style="opacity: 0; transform: translateY(20px);">
+          <img src="/au-1.png" alt="Villa Tropis Bedugul" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Image 2 -->
+        <div class="works-image-container absolute left-[12vw] top-[24%] w-[28vw] md:w-[15vw] aspect-[3/4] overflow-hidden" style="opacity: 0; transform: translateY(20px);">
+          <img src="/hero2.png" alt="Klinik Estetika Jakarta" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Image 3 -->
+        <div class="works-image-container absolute right-[8vw] top-[18%] w-[28vw] md:w-[15vw] aspect-[3/4] overflow-hidden" style="opacity: 0; transform: translateY(20px);">
+          <img src="/au-2.png" alt="Kantor Ruang Kreatif" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Image 4 -->
+        <div class="works-image-container absolute left-[8vw] top-[26%] w-[28vw] md:w-[15vw] aspect-[3/4] overflow-hidden" style="opacity: 0; transform: translateY(20px);">
+          <img src="/au-3.png" alt="Rumah Kaca Sentul" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Image 5 -->
+        <div class="works-image-container absolute right-[11vw] top-[22%] w-[28vw] md:w-[15vw] aspect-[3/4] overflow-hidden" style="opacity: 0; transform: translateY(20px);">
+          <img src="/hero1.png" alt="Paviliun Kayu Dago" class="w-full h-full object-cover" />
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      // Works Section GSAP Animation
+      const workItems = document.querySelectorAll(".works-list-item");
+      const workImages = document.querySelectorAll(".works-image-container");
+
+      workItems.forEach((item, index) => {
+        item.addEventListener("mouseenter", () => {
+          gsap.to(workImages[index], { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" });
+        });
+        item.addEventListener("mouseleave", () => {
+          gsap.to(workImages[index], { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" });
+        });
+      });
+    </script>
+
+    <!-- Process Section -->
+    <section id="process" class="relative z-10 w-full bg-white text-black">
+
+      <!-- Main 2-column layout — unified, no independent scrolling -->
+      <div class="w-full flex flex-col md:flex-row min-h-screen">
+
+        <!-- LEFT COLUMN — normal flow, narrow -->
+        <div class="w-full md:w-[28%] flex flex-col px-6 md:px-8 py-10 md:py-12">
+
+          <!-- Label -->
+          <p class="text-[14px] font-bold tracking-wide uppercase text-black mb-6">(CARA KAMI BERKARYA)</p>
+
+          <!-- Photo -->
+          <div class="w-full max-w-[320px] aspect-square overflow-hidden mb-8 shrink-0">
+            <img src="/hero1.png" alt="Proses Rumah Disain" class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Stage List -->
+          <div class="flex flex-col w-full">
+            <div class="flex items-center gap-4 py-2 border-t border-black/10">
+              <span class="text-[15px] md:text-[17px] font-medium text-black/50 shrink-0">(01)</span>
+              <span class="text-[15px] md:text-[17px] font-semibold tracking-tight text-black leading-tight">Konsep Desain</span>
+            </div>
+            <div class="flex items-center gap-4 py-2 border-t border-black/10">
+              <span class="text-[15px] md:text-[17px] font-medium text-black/50 shrink-0">(02)</span>
+              <span class="text-[15px] md:text-[17px] font-semibold tracking-tight text-black leading-tight">Pengembangan Desain</span>
+            </div>
+            <div class="flex items-center gap-4 py-2 border-t border-black/10">
+              <span class="text-[15px] md:text-[17px] font-medium text-black/50 shrink-0">(03)</span>
+              <span class="text-[15px] md:text-[17px] font-semibold tracking-tight text-black leading-tight">Pengurusan Izin</span>
+            </div>
+            <div class="flex items-center gap-4 py-2 border-t border-black/10">
+              <span class="text-[15px] md:text-[17px] font-medium text-black/50 shrink-0">(04)</span>
+              <span class="text-[15px] md:text-[17px] font-semibold tracking-tight text-black leading-tight">Desain Interior</span>
+            </div>
+            <div class="flex items-center gap-4 py-2 border-t border-black/10">
+              <span class="text-[15px] md:text-[17px] font-medium text-black/50 shrink-0">(05)</span>
+              <span class="text-[15px] md:text-[17px] font-semibold tracking-tight text-black leading-tight">Gambar & Dokumen Izin</span>
+            </div>
+            <div class="flex items-center gap-4 py-2 border-t border-b border-black/10">
+              <span class="text-[15px] md:text-[17px] font-medium text-black/50 shrink-0">(06)</span>
+              <span class="text-[15px] md:text-[17px] font-semibold tracking-tight text-black leading-tight">Gambar Kerja & Detail</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN — normal flow, wide, vertically centered content -->
+        <div class="w-full md:w-[72%] flex flex-col justify-center px-6 md:px-16 lg:px-24 py-10 md:py-16 gap-8 md:gap-12">
+
+          <!-- Descriptions -->
+          <div class="max-w-3xl flex flex-col gap-6 md:gap-8">
+            <p class="text-[1.6rem] md:text-[2.2rem] lg:text-[2.8rem] font-bold leading-[1.05] tracking-[-0.03em] text-black">
+              Pendekatan kami dirancang untuk memastikan perjalanan Anda dari konsep awal hingga selesai berjalan semudah, sejelas, dan seindah mungkin, tanpa kejutan, tanpa kebingungan.
+            </p>
+            <p class="text-[1.6rem] md:text-[2.2rem] lg:text-[2.8rem] font-bold leading-[1.05] tracking-[-0.03em] text-black">
+              Melalui 6 tahapan proses yang terstruktur, kami mengutamakan kejelasan, kolaborasi aktif, dan komitmen penuh untuk mewujudkan visi unik Anda di setiap langkahnya.
+            </p>
+          </div>
+
+          <!-- CTA Button -->
+          <div>
+            <a href="/proses" class="group inline-flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">
+              <div class="relative h-5 overflow-hidden">
+                <div class="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-5">
+                  <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-widest uppercase">KENALI PROSES KAMI</span>
+                  <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-widest uppercase">KENALI PROSES KAMI</span>
+                </div>
+              </div>
+              <span class="relative flex items-center justify-center w-3 h-3">
+                <span class="absolute w-3 h-3 rounded-full border-[1.5px] border-white transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-50 group-hover:bg-white group-hover:border-transparent"></span>
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Testimonial / Client Section -->
+    <section id="testimonial" class="relative z-10 w-full bg-white text-black">
+
+      <div class="px-6 md:px-10 lg:px-14 pt-10 pb-0">
+
+        <!-- Section Label -->
+        <p class="text-[14px] font-bold tracking-wide uppercase text-black mb-8">(SUARA DARI PEMILIK RUMAH)</p>
+
+        <!-- 2-Column Layout -->
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+
+          <!-- LEFT COLUMN: Photo + Quote + Client -->
+          <div class="w-full md:w-[42%] flex flex-col gap-7">
+
+            <!-- Project Photo -->
+            <div class="w-full overflow-hidden rounded-sm">
+              <img src="/hero1.png" alt="Proyek Klien" class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+            </div>
+
+            <!-- Quote -->
+            <div class="flex flex-col gap-5">
+              <p class="text-[0.95rem] md:text-base leading-[1.6] text-black/80 font-medium">
+                "Dari pertemuan pertama saya sangat terkesan dengan antusias mereka dalam memahami brief saya. Tim Rumah Disain benar-benar peduli dengan proyek ini; sepanjang proses desain mereka selalu mendengarkan dan berinteraksi dengan cara yang positif dan profesional, namun tetap santai.
+              </p>
+              <p class="text-[0.95rem] md:text-base leading-[1.6] text-black/80 font-medium">
+                Mereka menyambut masukan saya dan mendorong kolaborasi yang aktif. Saya tidak ragu bahwa Rumah Disain akan menghasilkan desain yang melebihi impian saya, dan hasilnya memang membuktikan kehebatan mereka!"
+              </p>
+            </div>
+
+            <!-- Client Name -->
+            <div class="flex flex-col gap-0.5 pt-1">
+              <span class="text-sm font-black tracking-wider uppercase">BUDI SANTOSO</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-black/40">PEMILIK RUMAH SUDIRMAN</span>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: Large Photo with hover card -->
+          <div class="w-full md:w-[58%] flex flex-col gap-4">
+
+            <!-- Image wrapper with hover reveal -->
+            <div id="testimonial-img-wrap" class="relative w-full overflow-hidden rounded-sm group cursor-pointer">
+
+              <!-- Main large image -->
+              <img src="/au-2.png" alt="Proyek Unggulan" class="w-full aspect-[3/4] md:aspect-[9/10] object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:blur-[6px]" />
+
+              <!-- Dark Overlay on Hover -->
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-700 ease-out pointer-events-none z-10"></div>
+
+              <!-- Hover Card (portrait popup) — appears on hover -->
+              <div class="testimonial-hover-card absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                <div class="relative w-[60%] max-w-[300px] shadow-2xl opacity-0 translate-y-4 scale-90 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-110">
+                  <!-- Card label top -->
+                  <div class="absolute top-3 left-0 right-0 flex justify-center z-10">
+                    <span class="text-[9px] font-black tracking-widest uppercase text-white drop-shadow-md">RUMAH SUDIRMAN</span>
+                  </div>
+                  <!-- Card image -->
+                  <img src="/hero2.png" alt="Hover project" class="w-full aspect-[9/14] object-cover rounded-sm" />
+                  <!-- Card label bottom -->
+                  <div class="absolute bottom-3 left-0 right-0 flex justify-center z-10">
+                    <span class="text-[9px] font-black tracking-widest uppercase text-white drop-shadow-md">JAKARTA SELATAN</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Project Metadata Row -->
+            <div class="flex items-center justify-between py-3 border-t border-black/10">
+              <div class="flex items-center gap-5">
+                <span class="text-[11px] font-bold text-black/30 tracking-widest">(2024)</span>
+                <span class="text-sm font-bold tracking-tight uppercase">RUMAH SUDIRMAN</span>
+              </div>
+              <a href="#" class="group/vp flex items-center gap-1.5 text-[11px] font-bold tracking-widest uppercase hover:opacity-50 transition-opacity">
+                LIHAT PROYEK
+                <span class="inline-block transition-transform duration-300 group-hover/vp:translate-x-1">→</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom padding spacer -->
+      <div class="h-16 md:h-24"></div>
+
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="cta-final" class="relative z-10 w-full bg-white text-black overflow-hidden">
+
+      <div class="flex flex-col items-center justify-center text-center px-6 md:px-10 pt-20 md:pt-28 pb-24 md:pb-32 gap-10 md:gap-12">
+
+        <!-- Big Headline -->
+        <h2 class="cta-headline text-[12.5vw] md:text-[10.5vw] lg:text-[8.5vw] font-semibold leading-[0.82] tracking-[-0.07em] uppercase text-black max-w-[95vw] w-full flex flex-col gap-1 md:gap-1.5">
+          <span class="block text-left pl-0">MERANGKAI RUANG</span>
+          <span class="block text-right pr-0">PENUH CERITA</span>
+        </h2>
+
+        <!-- CTA Button -->
+        <a href="#" class="ngobrol-trigger group inline-flex items-center gap-4 bg-black text-white px-8 py-4 rounded-full hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">
+          <div class="relative h-5 overflow-hidden">
+            <div class="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-5">
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-widest uppercase">CERITAKAN RUMAH IMPIAN ANDA</span>
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-widest uppercase">CERITAKAN RUMAH IMPIAN ANDA</span>
+            </div>
+          </div>
+          <span class="relative flex items-center justify-center w-3 h-3">
+            <span class="absolute w-3 h-3 rounded-full border-[1.5px] border-white transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:scale-50 group-hover:bg-white group-hover:border-transparent"></span>
+          </span>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="relative z-10 w-full bg-white text-black border-t border-black/10">
+
+      <!-- Main Footer Grid — full screen height -->
+      <div class="w-full flex flex-col md:flex-row" style="min-height: 100vh;">
+
+        <!-- LEFT: Photo (aspect 3:4) -->
+        <div class="w-full md:w-[32%] flex flex-col border-r border-black/10 overflow-hidden bg-white p-6 md:p-8 justify-center items-center" style="min-height:100vh;">
+          <!-- Photo -->
+          <div class="w-full aspect-[3/4] overflow-hidden">
+            <img src="/au-3.png" alt="Rumah Disain" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+        </div>
+
+        <!-- MIDDLE: Navigation — natural stack, large text -->
+        <div class="w-full md:w-[36%] flex flex-col border-r border-black/10 px-6 md:px-10 pt-8 md:pt-10 pb-10">
+          <p class="text-[14px] font-bold tracking-wide uppercase text-black mb-6">(NAVIGASI)</p>
+          <nav class="flex flex-col gap-[0.4em]">
+            <a href="#hero"        class="footer-nav-link group block overflow-hidden" style="height:1em; font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight:700; line-height:1; letter-spacing:-0.05em;">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-[50%]">
+                <span class="block">Beranda</span><span class="block">Beranda</span>
+              </div>
+            </a>
+            <a href="/karya" target="_blank"       class="footer-nav-link group block overflow-hidden" style="height:1em; font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight:700; line-height:1; letter-spacing:-0.05em;">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-[50%]">
+                <span class="block">Karya</span><span class="block">Karya</span>
+              </div>
+            </a>
+            <a href="/studio"       class="footer-nav-link group block overflow-hidden" style="height:1em; font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight:700; line-height:1; letter-spacing:-0.05em;">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-[50%]">
+                <span class="block">Studio</span><span class="block">Studio</span>
+              </div>
+            </a>
+            <a href="/proses"     class="footer-nav-link group block overflow-hidden" style="height:1em; font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight:700; line-height:1; letter-spacing:-0.05em;">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-[50%]">
+                <span class="block">Proses</span><span class="block">Proses</span>
+              </div>
+            </a>
+            <a href="#testimonial" class="footer-nav-link group block overflow-hidden" style="height:1em; font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight:700; line-height:1; letter-spacing:-0.05em;">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-[50%]">
+                <span class="block">Klien</span><span class="block">Klien</span>
+              </div>
+            </a>
+
+            <a href="#"            class="ngobrol-trigger footer-nav-link group block overflow-hidden" style="height:1em; font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight:700; line-height:1; letter-spacing:-0.05em;">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-[50%]">
+                <span class="block">Hubungi Kami</span><span class="block">Hubungi Kami</span>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+        <!-- RIGHT: Acknowledgement + Info + Sosmed -->
+        <div class="w-full md:w-[32%] flex flex-col px-6 md:px-10 pt-8 md:pt-10 pb-10 gap-8">
+
+          <!-- Acknowledgement -->
+          <div class="flex flex-col gap-2">
+            <p class="text-[14px] font-bold tracking-wide uppercase text-black mb-6">(TENTANG KAMI)</p>
+            <p class="text-[0.8rem] leading-[1.55] text-black/60 max-w-xs">
+              Kami percaya bahwa setiap ruang memiliki potensi untuk menjadi karya terbaik. Rumah Disain hadir untuk membantu Anda mewujudkan hunian impian dengan pendekatan yang penuh perhatian, kolaboratif, dan berpusat pada visi Anda.
+            </p>
+          </div>
+
+          <!-- Info Kontak -->
+          <div class="flex flex-col gap-1.5">
+            <p class="text-[14px] font-bold tracking-wide uppercase text-black mb-6">(INFO)</p>
+            <p class="text-[0.8rem] text-black/70">A: Jl. Sudirman No. 88, Jakarta Selatan, 12190</p>
+            <a href="mailto:halo@rumahdisain.id" class="text-[0.8rem] text-black hover:opacity-50 transition-opacity">E: halo@rumahdisain.id</a>
+            <a href="tel:+62211234567"           class="text-[0.8rem] text-black hover:opacity-50 transition-opacity">P: +62 21 1234 567</a>
+            <p class="text-[0.8rem] text-black/50">H: Senin – Jumat, 09.00 – 17.00 WIB</p>
+          </div>
+
+          <!-- Sosial Media -->
+          <div class="flex flex-col gap-1.5">
+            <p class="text-[14px] font-bold tracking-wide uppercase text-black mb-6">(IKUTI KAMI)</p>
+            <a href="#" class="group/s relative inline-block overflow-hidden h-[1rem] w-fit">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover/s:-translate-y-4">
+                <span class="text-[0.8rem] font-semibold h-4 leading-4 uppercase tracking-widest">Instagram</span>
+                <span class="text-[0.8rem] font-semibold h-4 leading-4 uppercase tracking-widest">Instagram</span>
+              </div>
+            </a>
+            <a href="#" class="group/s relative inline-block overflow-hidden h-[1rem] w-fit">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover/s:-translate-y-4">
+                <span class="text-[0.8rem] font-semibold h-4 leading-4 uppercase tracking-widest">Pinterest</span>
+                <span class="text-[0.8rem] font-semibold h-4 leading-4 uppercase tracking-widest">Pinterest</span>
+              </div>
+            </a>
+            <a href="#" class="group/s relative inline-block overflow-hidden h-[1rem] w-fit">
+              <div class="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover/s:-translate-y-4">
+                <span class="text-[0.8rem] font-semibold h-4 leading-4 uppercase tracking-widest">LinkedIn</span>
+                <span class="text-[0.8rem] font-semibold h-4 leading-4 uppercase tracking-widest">LinkedIn</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="w-full h-[1px] bg-black/10"></div>
+      <div class="w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-10 py-4 gap-2">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-black/30">© 2024 Rumah Disain. Semua hak dilindungi.</span>
+        <span class="text-[10px] font-bold tracking-widest uppercase text-black/30">Dibuat dengan ❤ di Jakarta</span>
+      </div>
+
+    </footer>
+
+
+    <script>
+      import gsap from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+      // Animasi muncul perlahan menggunakan GSAP
+      document.addEventListener('astro:page-load', () => {
+        // Kill existing triggers to prevent duplicates during client-side navigation
+        ScrollTrigger.getAll().forEach(t => t.kill());
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Process Cards Stack Animation
+        const processCards = gsap.utils.toArray('.process-card');
+        processCards.forEach((card, i) => {
+          if (i === processCards.length - 1) return; // Don't scale the last card
+          
+          gsap.to(card, {
+            scale: 0.95 - (processCards.length - 1 - i) * 0.015,
+            transformOrigin: "top center",
+            ease: "power1.inOut",
+            scrollTrigger: {
+              trigger: processCards[i + 1],
+              start: "top 15%", 
+              end: "top top", 
+              scrub: true,
+            }
+          });
+        });
+
+        // About Us Slider Logic
+        const auSlideImgs = document.querySelectorAll('.au-slide-img');
+        const auSlideTexts = document.querySelectorAll('.au-slide-text');
+        const auProgressBar = document.getElementById('au-progress-bar');
+        const auCounter = document.getElementById('au-counter');
+        const auNext = document.getElementById('au-next');
+        const auPrev = document.getElementById('au-prev');
+        
+        if (auSlideImgs.length > 0 && auProgressBar && auCounter) {
+          let currentAuSlide = 0;
+          let auProgressAnim;
+          let isAnimating = false;
+
+          const goToAuSlide = (index) => {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            if (auProgressAnim) auProgressAnim.kill();
+            
+            const oldIndex = currentAuSlide;
+            currentAuSlide = (index + auSlideImgs.length) % auSlideImgs.length;
+            
+            if (oldIndex === currentAuSlide) {
+              isAnimating = false;
+              return;
+            }
+            
+            const oldImg = auSlideImgs[oldIndex];
+            const newImg = auSlideImgs[currentAuSlide];
+            
+            const oldTextContainer = auSlideTexts[oldIndex];
+            const newTextContainer = auSlideTexts[currentAuSlide];
+            
+            const oldTexts = oldTextContainer.querySelectorAll('.au-text-reveal');
+            const newTexts = newTextContainer.querySelectorAll('.au-text-reveal');
+            
+            // Setup new elements
+            gsap.set(newImg, { clipPath: 'inset(100% 0 0 0)', zIndex: 10 });
+            gsap.set(oldImg, { zIndex: 1 });
+            
+            oldTextContainer.classList.add('pointer-events-none');
+            oldTextContainer.classList.remove('pointer-events-auto');
+            newTextContainer.classList.add('pointer-events-auto');
+            newTextContainer.classList.remove('pointer-events-none');
+            
+            gsap.set(newTextContainer, { zIndex: 10 });
+            gsap.set(oldTextContainer, { zIndex: 1 });
+            gsap.set(newTexts, { y: '110%' });
+            
+            const tl = gsap.timeline({ onComplete: () => {
+              isAnimating = false;
+              resetAuProgress();
+            }});
+            
+            // Animate out old text
+            tl.to(oldTexts, { y: '-110%', duration: 0.5, ease: 'power3.inOut', stagger: 0.05 }, 0);
+            
+            // Animate in new image (clip from bottom)
+            tl.to(newImg, { clipPath: 'inset(0% 0 0 0)', duration: 0.8, ease: 'power3.inOut' }, 0);
+            
+            // Animate in new text (clip from bottom)
+            tl.to(newTexts, { y: '0%', duration: 0.8, ease: 'power3.out', stagger: 0.05 }, 0.2);
+            
+            auCounter.textContent = `0${currentAuSlide + 1}/0${auSlideImgs.length}`;
+          };
+
+          const resetAuProgress = () => {
+            if (auProgressAnim) auProgressAnim.kill();
+            gsap.set(auProgressBar, { width: '0%' });
+            auProgressAnim = gsap.to(auProgressBar, {
+              width: '100%',
+              duration: 1.5,
+              ease: 'none',
+              onComplete: () => goToAuSlide(currentAuSlide + 1)
+            });
+          };
+
+          auNext?.addEventListener('click', () => goToAuSlide(currentAuSlide + 1));
+          auPrev?.addEventListener('click', () => goToAuSlide(currentAuSlide - 1));
+
+          resetAuProgress(); // start auto-slide
+        }
+
+        // About Buttons Reveal Animation
+        const aboutBtnReveals = document.querySelectorAll('.about-btn-reveal');
+        if (aboutBtnReveals.length > 0) {
+          gsap.to(aboutBtnReveals, {
+            scrollTrigger: {
+              trigger: '#about',
+              start: 'top 60%',
+              toggleActions: 'play none none reverse',
+            },
+            opacity: 1,
+            y: 0,
+            stagger: 0.08,
+            duration: 0.6,
+            ease: 'power2.out',
+          });
+        }
+
+        // Text Highlight Reveal
+        const textHighlights = document.querySelectorAll('.text-highlight');
+        if (textHighlights.length > 0) {
+          gsap.to(textHighlights, {
+            backgroundPosition: "0% 0%",
+            ease: "none",
+            scrollTrigger: {
+              trigger: '.text-highlight-container',
+              start: 'top 75%',
+              end: 'bottom 40%',
+              scrub: 1,
+            }
+          });
+        }
+
+
+
+        // Sticky Floating Buttons (forever)
+        const stickyButtonsWrapper = document.querySelector('#sticky-buttons-wrapper');
+        if (stickyButtonsWrapper) {
+          ScrollTrigger.create({
+            trigger: stickyButtonsWrapper,
+            start: "top top",
+            end: "max",
+            pin: true,
+            pinSpacing: false,
+          });
+        }
+
+        // Hero Reveal Animation - Clip from bottom to top
+        const heroReveals = document.querySelectorAll('.hero-reveal');
+        if (heroReveals.length > 0) {
+          gsap.to(heroReveals, {
+            y: '0%',
+            duration: 1.2,
+            ease: 'power4.out',
+            stagger: 0.08,
+            delay: 0.3,
+          });
+        }
+
+        // Animasi Hover LIHAT PROYEK
+        const projectLink = document.querySelector('.project-link');
+        if (projectLink) {
+          const hoverTl = gsap.timeline({ paused: true });
+          
+          hoverTl.to('.hero-bg-1', {
+            scale: 1,
+            duration: 0.8,
+            ease: "power3.inOut"
+          })
+          .to('.hero-bg-2', {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 0.8,
+            ease: "power3.inOut"
+          }, "-=0.6");
+
+          const projectNameSlider = document.querySelector('.project-name-slider');
+
+          projectLink.addEventListener('mouseenter', () => {
+            hoverTl.play();
+            if (projectNameSlider) projectNameSlider.classList.add('-translate-y-5');
+          });
+          
+          projectLink.addEventListener('mouseleave', () => {
+            hoverTl.reverse();
+            if (projectNameSlider) projectNameSlider.classList.remove('-translate-y-5');
+          });
+        }
+
+        // Fullscreen Menu Overlay
+        const menuTrigger = document.querySelector('#menu-trigger');
+        const menuClose = document.querySelector('#menu-close');
+        const menuOverlay = document.querySelector('#menu-overlay');
+        const menuTextReveals = document.querySelectorAll('.menu-text-reveal');
+
+        if (menuTrigger && menuOverlay && menuClose) {
+          let menuOpen = false;
+          const menuTl = gsap.timeline({ paused: true });
+
+          // Step 1: Clip overlay from top
+          menuTl.to(menuOverlay, {
+            clipPath: 'inset(0 0 0% 0)',
+            duration: 0.8,
+            ease: 'power4.inOut',
+          });
+
+          // Step 2: Reveal text lines from bottom
+          menuTl.to(menuTextReveals, {
+            y: '0%',
+            duration: 0.6,
+            ease: 'power4.out',
+            stagger: 0.04,
+          }, '-=0.3');
+
+          menuTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!menuOpen) {
+              menuOpen = true;
+              document.body.style.overflow = 'hidden';
+              menuTl.play();
+            }
+          });
+
+          const closeMenu = () => {
+            menuOpen = false;
+            document.body.style.overflow = '';
+            // Reverse text first, then overlay
+            gsap.to(menuTextReveals, {
+              y: '110%',
+              duration: 0.4,
+              ease: 'power3.in',
+              stagger: 0.02,
+              onComplete: () => {
+                gsap.to(menuOverlay, {
+                  clipPath: 'inset(0 0 100% 0)',
+                  duration: 0.6,
+                  ease: 'power4.inOut',
+                  onComplete: () => {
+                    menuTl.pause(0);
+                  }
+                });
+              }
+            });
+          };
+
+          menuClose.addEventListener('click', closeMenu);
+
+          // Close menu overlay when clicking any link
+          const menuLinks = menuOverlay.querySelectorAll('nav a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+          });
+        }
+
+        // Works List Hover and Animation
+        const worksListItems = document.querySelectorAll('.works-list-item');
+        const worksImageContainers = document.querySelectorAll('.works-image-container');
+        const worksSection = document.querySelector('#works');
+
+        if (worksListItems.length > 0 && worksImageContainers.length > 0) {
+          // Entry animation when section scrolls into view
+          gsap.from(worksListItems, {
+            scrollTrigger: {
+              trigger: worksSection,
+              start: "top 60%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power4.out"
+          });
+
+          worksListItems.forEach((item, index) => {
+            const correspondingImg = worksImageContainers[index];
+
+            item.addEventListener('mouseenter', () => {
+              // Dim other list items
+              worksListItems.forEach((otherItem, otherIndex) => {
+                if (otherIndex !== index) {
+                  gsap.to(otherItem.querySelector('h2'), {
+                    opacity: 0.15,
+                    duration: 0.4,
+                    ease: "power2.out"
+                  });
+                } else {
+                  gsap.to(otherItem.querySelector('h2'), {
+                    scale: 1.02,
+                    duration: 0.4,
+                    ease: "power2.out"
+                  });
+                }
+              });
+
+              // Randomize placement
+              const side = index % 2 === 0 ? 'left' : 'right';
+              const randomTop = 10 + Math.random() * 25; // 10% to 35%
+              const randomOffset = 4 + Math.random() * 12; // 4vw to 16vw
+
+              gsap.killTweensOf(correspondingImg);
+              
+              // Apply randomized layout offsets before revealing
+              gsap.set(correspondingImg, {
+                left: 'auto',
+                right: 'auto',
+                top: `${randomTop}%`,
+                [side]: `${randomOffset}vw`
+              });
+
+              // Reveal image
+              gsap.to(correspondingImg, {
+                opacity: 1,
+                y: 0,
+                rotation: 0,
+                duration: 0.6,
+                ease: "power2.out"
+              });
+            });
+
+            item.addEventListener('mouseleave', () => {
+              // Restore all list items
+              worksListItems.forEach((otherItem) => {
+                gsap.to(otherItem.querySelector('h2'), {
+                  opacity: 1,
+                  scale: 1,
+                  duration: 0.4,
+                  ease: "power2.out"
+                });
+              });
+
+              // Hide image
+              gsap.killTweensOf(correspondingImg);
+              gsap.to(correspondingImg, {
+                opacity: 0,
+                y: 20,
+                rotation: 0,
+                duration: 0.5,
+                ease: "power2.inOut"
+              });
+            });
+          });
+        }
+
+        // Contact Drawer Logic
+        const contactPanel = document.getElementById('contact-panel');
+        const contactBackdrop = document.getElementById('contact-backdrop');
+        const contactTriggers = document.querySelectorAll('.ngobrol-trigger');
+        const contactCloseBtns = document.querySelectorAll('.contact-close');
+        const contactNextBtn = document.getElementById('contact-next');
+        const contactBackBtn = document.getElementById('contact-back');
+        const contactNext2Btn = document.getElementById('contact-next-2');
+        const contactBack3Btn = document.getElementById('contact-back-3');
+        const contactSubmitBtn = document.getElementById('contact-submit');
+        const contactDoneBtn = document.getElementById('contact-done');
+
+        const step1 = document.getElementById('contact-step-1');
+        const step2 = document.getElementById('contact-step-2');
+        const step3 = document.getElementById('contact-step-3');
+        const successScreen = document.getElementById('contact-success');
+
+        let isContactOpen = false;
+
+        const openContact = (e) => {
+          if (e) e.preventDefault();
+          isContactOpen = true;
+          document.body.style.overflow = 'hidden';
+
+          // Reset steps
+          if (step1 && step2 && step3 && successScreen) {
+            step1.classList.remove('hidden');
+            step2.classList.add('hidden');
+            step3.classList.add('hidden');
+            successScreen.classList.add('hidden');
+          }
+
+          // Reset input values
+          const nameInput = document.getElementById('contact-name');
+          const emailInput = document.getElementById('contact-email');
+          const phoneInput = document.getElementById('contact-phone');
+          const otherDetailsInput = document.getElementById('contact-other-details');
+          if (nameInput) nameInput.value = '';
+          if (emailInput) emailInput.value = '';
+          if (phoneInput) phoneInput.value = '';
+          if (otherDetailsInput) otherDetailsInput.value = '';
+
+          // Reset project type buttons to default (NEW HOME active, others inactive)
+          const typeBtns = document.querySelectorAll('.project-type-btn');
+          typeBtns.forEach(btn => {
+            if (btn.getAttribute('data-value') === 'new-home') {
+              btn.classList.add('bg-white', 'text-black');
+              btn.classList.remove('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+            } else {
+              btn.classList.remove('bg-white', 'text-black');
+              btn.classList.add('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+            }
+          });
+
+          // Reset hear about buttons to default (INSTAGRAM active, others inactive)
+          const hearBtns = document.querySelectorAll('.hear-about-btn');
+          hearBtns.forEach(btn => {
+            if (btn.getAttribute('data-value') === 'instagram') {
+              btn.classList.add('bg-white', 'text-black');
+              btn.classList.remove('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+            } else {
+              btn.classList.remove('bg-white', 'text-black');
+              btn.classList.add('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+            }
+          });
+
+          // Reveal backdrop
+          if (contactBackdrop) {
+            contactBackdrop.classList.remove('hidden');
+            gsap.to(contactBackdrop, { opacity: 1, duration: 0.5 });
+          }
+
+          // Reveal side panel (clipPath from right)
+          if (contactPanel) {
+            gsap.to(contactPanel, {
+              clipPath: 'inset(0 0 0 0%)',
+              duration: 0.8,
+              ease: 'power4.inOut'
+            });
+          }
+        };
+
+        const closeContact = () => {
+          isContactOpen = false;
+          document.body.style.overflow = '';
+
+          // Hide backdrop
+          if (contactBackdrop) {
+            gsap.to(contactBackdrop, {
+              opacity: 0,
+              duration: 0.5,
+              onComplete: () => {
+                contactBackdrop.classList.add('hidden');
+              }
+            });
+          }
+
+          // Hide side panel
+          if (contactPanel) {
+            gsap.to(contactPanel, {
+              clipPath: 'inset(0 0 0 100%)',
+              duration: 0.6,
+              ease: 'power4.inOut'
+            });
+          }
+        };
+
+        contactTriggers.forEach(btn => btn.addEventListener('click', openContact));
+        contactCloseBtns.forEach(btn => btn.addEventListener('click', closeContact));
+        contactBackdrop?.addEventListener('click', closeContact);
+
+        // Toggle project type selection (multiple select enabled)
+        const projectTypeBtns = document.querySelectorAll('.project-type-btn');
+        projectTypeBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (btn.classList.contains('bg-white')) {
+              // De-select
+              btn.classList.remove('bg-white', 'text-black');
+              btn.classList.add('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+            } else {
+              // Select
+              btn.classList.add('bg-white', 'text-black');
+              btn.classList.remove('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+            }
+          });
+        });
+
+        // Toggle hear about selection (single select)
+        const hearAboutBtns = document.querySelectorAll('.hear-about-btn');
+        hearAboutBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            hearAboutBtns.forEach(b => {
+              b.classList.remove('bg-white', 'text-black');
+              b.classList.add('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+            });
+            btn.classList.add('bg-white', 'text-black');
+            btn.classList.remove('bg-zinc-900', 'text-white', 'hover:bg-zinc-800');
+          });
+        });
+
+        contactNextBtn?.addEventListener('click', () => {
+          // Validate required fields
+          const nameInput = document.getElementById('contact-name');
+          const emailInput = document.getElementById('contact-email');
+          if (nameInput && emailInput) {
+            if (!nameInput.value.trim() || !emailInput.value.trim()) {
+              alert('Harap isi Nama dan Alamat Email Anda.');
+              return;
+            }
+          }
+          if (step1 && step2) {
+            step1.classList.add('hidden');
+            step2.classList.remove('hidden');
+          }
+        });
+
+        contactBackBtn?.addEventListener('click', () => {
+          if (step1 && step2) {
+            step2.classList.add('hidden');
+            step1.classList.remove('hidden');
+          }
+        });
+
+        contactNext2Btn?.addEventListener('click', () => {
+          const selectedBtns = document.querySelectorAll('.project-type-btn.bg-white');
+          if (selectedBtns.length === 0) {
+            alert('Harap pilih minimal satu jenis proyek.');
+            return;
+          }
+          if (step2 && step3) {
+            step2.classList.add('hidden');
+            step3.classList.remove('hidden');
+          }
+        });
+
+        contactBack3Btn?.addEventListener('click', () => {
+          if (step2 && step3) {
+            step3.classList.add('hidden');
+            step2.classList.remove('hidden');
+          }
+        });
+
+        contactSubmitBtn?.addEventListener('click', () => {
+          const selectedBtns = document.querySelectorAll('.hear-about-btn.bg-white');
+          if (selectedBtns.length === 0) {
+            alert('Harap pilih salah satu opsi bagaimana Anda mengetahui tentang kami.');
+            return;
+          }
+          const otherBtn = document.querySelector('.hear-about-btn[data-value="other"]');
+          if (otherBtn && otherBtn.classList.contains('bg-white')) {
+            const otherDetails = document.getElementById('contact-other-details');
+            if (otherDetails && !otherDetails.value.trim()) {
+              alert('Harap isi detail bagaimana Anda mengetahui tentang kami.');
+              return;
+            }
+          }
+          if (step3 && successScreen) {
+            step3.classList.add('hidden');
+            successScreen.classList.remove('hidden');
+          }
+        });
+
+        contactDoneBtn?.addEventListener('click', closeContact);
+
+        // Refresh triggers on next frame to ensure correct height and layout calculations
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+        });
+      });
+    </script>
+
+    <style is:global>
+      .group:hover .line-loop-element {
+        animation: lineLoop 0.3s ease-in 2;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes lineLoop {
+        0% {
+          transform-origin: 100% 50%;
+          transform: scaleX(1);
+        }
+        50% {
+          transform-origin: 100% 50%;
+          transform: scaleX(0);
+        }
+        50.1% {
+          transform-origin: 0% 50%;
+          transform: scaleX(0);
+        }
+        100% {
+          transform-origin: 0% 50%;
+          transform: scaleX(1);
+        }
+      }
+    </style>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div id="menu-overlay" class="fixed inset-0 z-[999] bg-black text-white flex flex-col justify-between px-8 md:px-12 py-8" style="clip-path: inset(0 0 100% 0);">
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between">
+        <div class="overflow-hidden">
+          <img src="/logo-putih.png" alt="Rumah Disain" class="menu-text-reveal inline-block translate-y-[110%] h-10 md:h-14 w-auto" />
+        </div>
+        <div class="overflow-hidden">
+          <div class="menu-text-reveal translate-y-[110%]">
+            <button id="menu-close" class="group/close relative block overflow-hidden h-[1em] cursor-pointer hover:opacity-60 transition-opacity">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/close:-translate-y-1/2">
+                <span class="text-xs md:text-sm font-bold leading-none tracking-tight uppercase block">CLOSE</span>
+                <span class="text-xs md:text-sm font-bold leading-none tracking-tight uppercase block">CLOSE</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Links -->
+      <nav class="flex flex-col gap-2 md:gap-3 text-[7vw] md:text-[4vw]">
+        <div class="overflow-hidden">
+          <div class="menu-text-reveal translate-y-[110%]">
+            <a href="/" class="group/menu relative block overflow-hidden h-[0.95em]">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/menu:-translate-y-1/2">
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">BERANDA</span>
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">BERANDA</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div class="menu-text-reveal translate-y-[110%]">
+            <a href="/karya" target="_blank" class="group/menu relative block overflow-hidden h-[0.95em]">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/menu:-translate-y-1/2">
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">KARYA</span>
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">KARYA</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div class="menu-text-reveal translate-y-[110%]">
+            <a href="/studio" class="group/menu relative block overflow-hidden h-[0.95em]">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/menu:-translate-y-1/2">
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">STUDIO</span>
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">STUDIO</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div class="menu-text-reveal translate-y-[110%]">
+            <a href="/proses" class="group/menu relative block overflow-hidden h-[0.95em]">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/menu:-translate-y-1/2">
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">PROSES</span>
+                <span class="block font-semibold leading-[0.95] tracking-[-0.06em] uppercase">PROSES</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Bottom Links -->
+      <div class="flex flex-col gap-4">
+        <div class="overflow-hidden">
+          <div class="menu-text-reveal translate-y-[110%]">
+            <a href="#" class="group/bot relative inline-block h-5 overflow-hidden text-amber-400 hover:opacity-60 transition-opacity">
+              <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/bot:-translate-y-5">
+                <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">INSTAGRAM</span>
+                <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">INSTAGRAM</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-0">
+          <div class="overflow-hidden">
+            <div class="menu-text-reveal translate-y-[110%]">
+              <a href="#" class="group/bot relative inline-block h-4 overflow-hidden hover:opacity-60 transition-opacity">
+                <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/bot:-translate-y-4">
+                  <span class="text-xs font-bold h-4 leading-4 flex items-center tracking-tight uppercase">KEBIJAKAN PRIVASI</span>
+                  <span class="text-xs font-bold h-4 leading-4 flex items-center tracking-tight uppercase">KEBIJAKAN PRIVASI</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="overflow-hidden">
+            <div class="menu-text-reveal translate-y-[110%]">
+              <a href="#" class="group/bot relative inline-block h-4 overflow-hidden hover:opacity-60 transition-opacity">
+                <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/bot:-translate-y-4">
+                  <span class="text-xs font-bold h-4 leading-4 flex items-center tracking-tight uppercase">KETENTUAN LAYANAN</span>
+                  <span class="text-xs font-bold h-4 leading-4 flex items-center tracking-tight uppercase">KETENTUAN LAYANAN</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed Buttons Bar (Moved from About Us) -->
+    <div class="fixed top-4 w-full flex items-center justify-end gap-4 px-4 md:px-8 py-2 z-[90] pointer-events-none">
+      <div class="pointer-events-auto">
+        <a href="#" class="ngobrol-trigger about-btn-reveal opacity-0 cursor-pointer group flex items-center gap-4 bg-black text-white px-7 py-3 rounded-full hover:scale-105 transition-transform duration-300 ease-[cubic-bezier(0.76,0,0.24,1)]">
+          <div class="relative h-5 overflow-hidden">
+            <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-5">
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">NGOBROL YUK</span>
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">NGOBROL YUK</span>
+            </div>
+          </div>
+          <!-- Lingkaran (Agak besar outline di rest state, mengecil dan fill di hover state) -->
+          <span class="relative flex items-center justify-center w-3 h-3">
+            <span class="absolute w-3 h-3 rounded-full border-[1.5px] border-white transition-all duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-50 group-hover:bg-white group-hover:border-transparent"></span>
+          </span>
+        </a>
+      </div>
+      <div class="pointer-events-auto">
+        <a href="#" id="menu-trigger" class="about-btn-reveal opacity-0 cursor-pointer group flex items-center gap-3 bg-[#e8e6e1] text-black px-7 py-3 rounded-full hover:scale-105 transition-transform duration-300">
+          <div class="relative h-5 overflow-hidden">
+            <div class="flex flex-col transition-transform duration-200 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:-translate-y-5">
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">MENU</span>
+              <span class="text-sm font-bold h-5 leading-5 flex items-center tracking-tight uppercase">MENU</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Panel Overlay -->
+    <div id="contact-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-md z-[9998] hidden opacity-0 transition-opacity duration-500"></div>
+
+    <div id="contact-panel" class="fixed top-0 right-0 h-screen w-full md:w-[78vw] lg:w-[70vw] xl:w-[66vw] max-w-[1050px] z-[9999] bg-black text-white p-6 md:p-12 lg:p-16 overflow-y-auto flex flex-col justify-between" style="clip-path: inset(0 0 0 100%);">
+      
+      <!-- STEP 1: Personal Details -->
+      <div id="contact-step-1" class="flex flex-col flex-1 justify-between">
+        <div>
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold tracking-widest text-white uppercase">(KONSULTASI PROYEK)</span>
+            <button class="contact-close text-xs md:text-sm font-bold tracking-widest uppercase hover:opacity-60 cursor-pointer bg-transparent border-none text-white">TUTUP</button>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between gap-8 items-start mt-8">
+            <p class="text-zinc-100 text-sm md:text-[15px] lg:text-[17px] leading-relaxed max-w-sm md:max-w-lg">
+              Untuk memulai, kami meminta Anda memberikan beberapa informasi awal tentang proyek Anda guna membantu kami menentukan apakah studio kami adalah mitra yang tepat. Tim kami akan meninjau rincian tersebut dan menghubungi Anda untuk membahas langkah selanjutnya dalam waktu 5 hari kerja.
+            </p>
+            <div class="w-[120px] md:w-[190px] lg:w-[230px] aspect-[3/4] overflow-hidden shrink-0 rounded-none shadow-lg">
+              <img src="/au-1.png" alt="Enquiry Project" class="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div class="flex justify-between items-end mt-12 mb-2">
+            <span class="text-[14px] md:text-[16px] font-bold uppercase tracking-wider text-white">INFORMASI PRIBADI ANDA</span>
+            <span class="text-[13px] md:text-[15px] text-white/50 font-mono tracking-widest">(01/08)</span>
+          </div>
+          <div class="w-full h-[1px] bg-white/20 mb-8"></div>
+
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-2">
+              <label class="text-[15px] md:text-[17px] font-bold text-white block">Nama Lengkap <span class="text-red-500">*</span></label>
+              <input type="text" id="contact-name" class="w-full bg-[#edf2f7] text-black rounded-[6px] px-5 py-4 font-semibold text-[16px] md:text-[18px] focus:outline-none focus:ring-2 focus:ring-zinc-400" placeholder="Aldo Mahendra" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[15px] md:text-[17px] font-bold text-white block">Alamat Email <span class="text-red-500">*</span></label>
+              <input type="email" id="contact-email" class="w-full bg-[#edf2f7] text-black rounded-[6px] px-5 py-4 font-semibold text-[16px] md:text-[18px] focus:outline-none focus:ring-2 focus:ring-zinc-400" placeholder="aldohadiwinoto@gmail.com" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[15px] md:text-[17px] font-bold text-white block">Nomor Telepon</label>
+              <input type="tel" id="contact-phone" class="w-full bg-[#edf2f7] text-black rounded-[6px] px-5 py-4 font-semibold text-[16px] md:text-[18px] focus:outline-none focus:ring-2 focus:ring-zinc-400" placeholder="082257184591" />
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-end mt-12">
+          <button id="contact-next" class="group inline-flex items-center gap-3 bg-white text-black px-8 py-3.5 rounded-full hover:scale-105 transition-transform duration-300 font-bold text-xs md:text-sm tracking-wider uppercase cursor-pointer">
+            SELANJUTNYA &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Project Details -->
+      <div id="contact-step-2" class="hidden flex flex-col flex-1 justify-between">
+        <div>
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold tracking-widest text-white uppercase">(KONSULTASI PROYEK)</span>
+            <button class="contact-close text-xs md:text-sm font-bold tracking-widest uppercase hover:opacity-60 cursor-pointer bg-transparent border-none text-white">TUTUP</button>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between gap-8 items-start mt-8">
+            <p class="text-zinc-100 text-sm md:text-[15px] lg:text-[17px] leading-relaxed max-w-sm md:max-w-lg">
+              Untuk memulai, kami meminta Anda memberikan beberapa informasi awal tentang proyek Anda guna membantu kami menentukan apakah studio kami adalah mitra yang tepat. Tim kami akan meninjau rincian tersebut dan menghubungi Anda untuk membahas langkah selanjutnya dalam waktu 5 hari kerja.
+            </p>
+            <div class="w-[120px] md:w-[190px] lg:w-[230px] aspect-[3/4] overflow-hidden shrink-0 rounded-none shadow-lg">
+              <img src="/au-1.png" alt="Enquiry Project" class="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div class="flex justify-between items-end mt-12 mb-2">
+            <span class="text-[14px] md:text-[16px] font-bold uppercase tracking-wider text-white">RINCIAN PROYEK</span>
+            <span class="text-[13px] md:text-[15px] text-white/50 font-mono tracking-widest">(03/08)</span>
+          </div>
+          <div class="w-full h-[1px] bg-white/20 mb-8"></div>
+
+          <div class="flex flex-col gap-6">
+            <div class="text-[15px] md:text-[17px] font-bold text-white">
+              Proyek apa yang sedang Anda rencanakan? <span class="text-red-500">*</span> <span class="text-zinc-500 font-normal pl-1">(pilih lebih dari satu jika diperlukan)</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <button type="button" class="project-type-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-white text-black text-center" data-value="new-home">
+                RUMAH BARU
+              </button>
+              <button type="button" class="project-type-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="renovation-extensions">
+                RENOVASI + PERLUASAN
+              </button>
+              <button type="button" class="project-type-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="commercial-project">
+                PROYEK KOMERSIAL
+              </button>
+              <button type="button" class="project-type-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="interior-design">
+                DESAIN INTERIOR SAJA
+              </button>
+              <button type="button" class="project-type-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="other-unsure">
+                LAINNYA / BELUM YAKIN
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-between mt-12 items-center">
+          <button id="contact-back" class="text-xs md:text-sm font-bold tracking-widest uppercase hover:opacity-60 cursor-pointer bg-transparent border-none text-white">&larr; KEMBALI</button>
+          <button id="contact-next-2" class="group inline-flex items-center gap-3 bg-white text-black px-8 py-3.5 rounded-full hover:scale-105 transition-transform duration-300 font-bold text-xs md:text-sm tracking-wider uppercase cursor-pointer">
+            SELANJUTNYA &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Additional Information -->
+      <div id="contact-step-3" class="hidden flex flex-col flex-1 justify-between">
+        <div>
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold tracking-widest text-white uppercase">(KONSULTASI PROYEK)</span>
+            <button class="contact-close text-xs md:text-sm font-bold tracking-widest uppercase hover:opacity-60 cursor-pointer bg-transparent border-none text-white">TUTUP</button>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between gap-8 items-start mt-8">
+            <p class="text-zinc-100 text-sm md:text-[15px] lg:text-[17px] leading-relaxed max-w-sm md:max-w-lg">
+              Untuk memulai, kami meminta Anda memberikan beberapa informasi awal tentang proyek Anda guna membantu kami menentukan apakah studio kami adalah mitra yang tepat. Tim kami akan meninjau rincian tersebut dan menghubungi Anda untuk membahas langkah selanjutnya dalam waktu 5 hari kerja.
+            </p>
+            <div class="w-[120px] md:w-[190px] lg:w-[230px] aspect-[3/4] overflow-hidden shrink-0 rounded-none shadow-lg">
+              <img src="/au-1.png" alt="Enquiry Project" class="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div class="flex justify-between items-end mt-12 mb-2">
+            <span class="text-[14px] md:text-[16px] font-bold uppercase tracking-wider text-white">INFORMASI TAMBAHAN</span>
+            <span class="text-[13px] md:text-[15px] text-white/50 font-mono tracking-widest">(08/08)</span>
+          </div>
+          <div class="w-full h-[1px] bg-white/20 mb-8"></div>
+
+          <div class="flex flex-col gap-6">
+            <div class="text-[15px] md:text-[17px] font-bold text-white">
+              Bagaimana Anda mengetahui tentang kami?
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <button type="button" class="hear-about-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="friend">
+                TEMAN
+              </button>
+              <button type="button" class="hear-about-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="family">
+                KELUARGA
+              </button>
+              <button type="button" class="hear-about-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="google">
+                GOOGLE
+              </button>
+              <button type="button" class="hear-about-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-white text-black text-center" data-value="instagram">
+                INSTAGRAM
+              </button>
+              <button type="button" class="hear-about-btn py-5 px-6 rounded-[6px] font-bold uppercase tracking-wider text-[13px] md:text-[14px] cursor-pointer transition-all duration-200 bg-zinc-900 text-white hover:bg-zinc-800 text-center" data-value="other">
+                LAINNYA
+              </button>
+            </div>
+
+            <div class="mt-4 flex flex-col gap-2">
+              <label class="text-[14px] md:text-[15px] font-bold text-white block">Jika Anda memilih "Lainnya" di atas, silakan berikan rincian di bawah ini</label>
+              <input type="text" id="contact-other-details" class="w-full bg-[#edf2f7] text-black rounded-[6px] px-5 py-4 font-semibold text-[16px] md:text-[18px] focus:outline-none focus:ring-2 focus:ring-zinc-400" placeholder="misal: Website arsitek, majalah, dll." />
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-between mt-12 items-center">
+          <button id="contact-back-3" class="text-xs md:text-sm font-bold tracking-widest uppercase hover:opacity-60 cursor-pointer bg-transparent border-none text-white">&larr; KEMBALI</button>
+          <button id="contact-submit" class="group inline-flex items-center gap-3 bg-white text-black px-8 py-3.5 rounded-full hover:scale-105 transition-transform duration-300 font-bold text-xs md:text-sm tracking-wider uppercase cursor-pointer">
+            KIRIM
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Success -->
+      <div id="contact-success" class="hidden flex flex-col flex-1 justify-center items-center text-center py-20">
+        <div class="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold uppercase tracking-wide mb-4">Terima Kasih!</h3>
+        <p class="text-zinc-300 text-sm md:text-base leading-relaxed max-w-xs mb-8">
+          Pertanyaan proyek Anda telah diterima. Tim kami akan meninjau detailnya dan menghubungi Anda dalam waktu 5 hari kerja.
+        </p>
+        <button id="contact-done" class="bg-white text-black px-8 py-3.5 rounded-full hover:scale-105 transition-transform duration-300 font-bold text-xs md:text-sm tracking-wider uppercase cursor-pointer">
+          SELESAI
+        </button>
+      </div>
+
+    </div>
+
+    <style is:global>
+      .text-highlight {
+        background: linear-gradient(135deg, #000 47%, rgba(0,0,0,0.15) 53%);
+        background-size: 300% 300%;
+        background-position: 100% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .text-highlight * {
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
+    </style>
+  </body>
+</html>
